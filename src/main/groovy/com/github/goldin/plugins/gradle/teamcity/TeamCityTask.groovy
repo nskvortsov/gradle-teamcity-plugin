@@ -13,7 +13,7 @@ import org.gradle.api.tasks.bundling.Jar
 /**
  * Assembles TeamCity plugin archive.
  */
-class AssembleTeamCityPluginTask extends BaseTask
+class TeamCityTask extends BaseTask
 {
     private static final String BSR = 'buildServerResources'
 
@@ -24,11 +24,11 @@ class AssembleTeamCityPluginTask extends BaseTask
     File archive
 
 
-    private AssembleTeamCityPluginExtension ext() { extension( TeamCityPlugin.ASSEMBLE_PLUGIN_EXTENSION, AssembleTeamCityPluginExtension )}
+    private TeamCityExtension ext() { extension( TeamCityPlugin.ASSEMBLE_PLUGIN_EXTENSION, TeamCityExtension )}
     private buildFile( String name, String extension = 'zip' ) { new File( project.buildDir, "teamcity/$name.$extension" )}
 
 
-    AssembleTeamCityPluginTask (){}
+    TeamCityTask (){}
 
 
     @TaskAction
@@ -59,10 +59,10 @@ class AssembleTeamCityPluginTask extends BaseTask
 
 
     /**
-     * Validates {@link AssembleTeamCityPluginExtension} instance initiated by Gradle.
-     * @return {@link AssembleTeamCityPluginExtension} instance initiated by Gradle.
+     * Validates {@link TeamCityExtension} instance initiated by Gradle.
+     * @return {@link TeamCityExtension} instance initiated by Gradle.
      */
-    private AssembleTeamCityPluginExtension validateExtension()
+    private TeamCityExtension validateExtension()
     {
         final ext = ext()
 

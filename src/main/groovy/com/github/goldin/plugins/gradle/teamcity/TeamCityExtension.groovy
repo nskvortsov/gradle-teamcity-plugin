@@ -7,10 +7,10 @@ import org.gradle.api.tasks.bundling.Jar
 
 
 /**
- * {@link AssembleTeamCityPluginTask} extension.
+ * {@link TeamCityTask} extension.
  */
 @SuppressWarnings([ 'ConfusingMethodName' ])
-class AssembleTeamCityPluginExtension
+class TeamCityExtension
 {
     /**
      * Template properties.
